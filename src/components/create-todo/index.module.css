@@ -1,25 +1,31 @@
-.createTodoSection{
-    position: absolute;
-    top: 100px;
-    width:50%;
-    left: 20%;
-    background-color: white;
-    height: 35px;
-    border-radius: 5px;
-    display: flex;
+.createTodosection{
+    width: 60%;
+    margin: auto;
     padding: 5px;
+    border-radius: 12px ;
+    background-color: beige;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 120px;
+    left: 20%;
+    
 
 }
-
-.createTodoInput{
-    width: 90%;
+.createTodoinput1{
+    width:90%;
+    padding: 10px;
+    border-radius: 12px; 
     border: none;
-
+    background-color: beige;
+    input {border:0;outline:0;}
+    input:focus {outline:none!important;}
 }
-
-.createTodoButton{
-    background-color: blueviolet;
-    border-radius: 30px;
-    color: white;
+.btn{
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #AC41FF;
     border-style: none;
+    color:aliceblue;
+       
 }

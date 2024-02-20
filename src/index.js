@@ -1,17 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// npm
+import {useState,useEffect} from "react";
+import { useLocalStorage } from "usehooks-ts";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+function TodoList(){
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    // let todos = [];
+    const [todos, setTodos] = useLocalStorage("TODO_KEY",[]);
+
+
+//     function getTodos()
+//     {
+//         //Get all todos from local storage and store it
+//        let todos = JSON.parse(localStorage.getItem("TODO_KEY"))|| [];
+
+//     //    update the react state
+//     setTodos (todos);
+//     }
+// // list rendering
+//   useEffect(getTodos,[]);
+    return(
+        <ul>
+           
+            {todos.map(function(todo,index){
+                return <li key={index}>{todo}</li>
+            })}
+        </ul>
+    );
+
+}
+export default TodoList;
