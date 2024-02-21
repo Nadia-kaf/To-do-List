@@ -28,7 +28,7 @@ function CreateTodo() {
 
  
             <button 
-            onClick={()=>saveTodos([...todos,todo])}
+            onClick={()=>saveTodos()}
             className={`btn ${styles.btn} `}
             > 
             Create </button>
