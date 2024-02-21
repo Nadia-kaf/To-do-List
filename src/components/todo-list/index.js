@@ -5,7 +5,7 @@ import TodoItem from "../todo-item";
 function TodoList() {
     //let todos =[];
 
-    const [todos, setTodos] = useLocalStorage.getItem("TODO_KEY", []);
+    const [todos, setTodos] = useLocalStorage("TODO_KEY", []);
 
     //function getTodos() {
     //Get all todos from local storage and store them.
@@ -16,11 +16,18 @@ function TodoList() {
 
     //React.useEffect(getTodos,[]);
     return (
-        <ul className="list-group">
+       <section>
+        <button 
+           className="btn btn-danger"
+           onClick={()=> setTodos([])}
+           >Clear Todos</button>
+
+      <ul className="list-group">
             {todos.map(function (todo, index) {
                 return <TodoItem todo={todo} index={index}/>;
             })}
         </ul>
+       </section>
     );
 
 
